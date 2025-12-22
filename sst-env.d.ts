@@ -5,6 +5,29 @@
 
 declare module "sst" {
   export interface Resource {
+    "JWT_SECRET": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "MONGODB_URI": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "PORT": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "PaisaApi": {
+      "type": "sst.aws.ApiGatewayV2"
+      "url": string
+    }
+    "PaisaService": {
+      "service": string
+      "type": "sst.aws.Service"
+    }
+    "PaisaVpc": {
+      "type": "sst.aws.Vpc"
+    }
   }
 }
 /// <reference path="sst-env.d.ts" />

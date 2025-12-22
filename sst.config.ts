@@ -10,6 +10,10 @@ export default $config({
     };
   },
   async run() {
+    const PORT = new sst.Secret("PORT");
+    const MONGODB_URI = new sst.Secret("MONGODB_URI");
+    const JWT_SECRET = new sst.Secret("JWT_SECRET");
+
     const vpc = new sst.aws.Vpc("PaisaVpc", {
       az: ["ap-south-1a", "ap-south-1b", "ap-south-1c"],
     });
@@ -20,6 +24,11 @@ export default $config({
       dev: false,
       serviceRegistry: {
         port: 8001,
+      },
+      environment: {
+        PORT: PORT.value,
+        MONGODB_URI: MONGODB_URI.value,
+        JWT_SECRET: JWT_SECRET.value,
       },
     });
 
