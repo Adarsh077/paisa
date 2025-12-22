@@ -5,17 +5,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "PaisaApi": {
-      "type": "sst.aws.ApiGatewayV2"
-      "url": string
-    }
-    "PaisaService": {
-      "service": string
-      "type": "sst.aws.Service"
-    }
-    "PaisaVpc": {
-      "type": "sst.aws.Vpc"
-    }
   }
 }
 /// <reference path="sst-env.d.ts" />
